@@ -1,0 +1,74 @@
+---
+layout: plain
+title: "Balderdash"
+description: ""
+css: balderdash
+javascript: balderdash
+---
+{% include JB/setup %}
+
+
+<div id="wrapper">
+    <header>
+        <h1><a href="/">Balderdash</a></h1> <span><label for="words-toggle">Game</label> <label for="rules-toggle">Rules</label></span>
+    </header>
+    <div id="game-wrapper">
+        <input type="radio" checked id="words-toggle" name="word-rules-toggle">
+        <div id="words">
+            <button id="start-game" class="btn btn-primary btn-lg" data-index="0">START GAME</button> 
+            <button id="show-word" class="btn btn-danger btn-lg">SHOW WORD</button>
+            <div id="word-display">
+                <h2 id="word">Word</h2>
+                <div id="definition">
+                    <p class="word-type">part of speech</p>
+                    <p class="def">Definition</p>
+                    <p class="eg">Example of word in use.</p>
+                </div>
+            </div>
+        </div>
+        <input type="radio" id="rules-toggle" name="word-rules-toggle">
+        <div id="rules">
+            <h1>Rules</h1>
+            <p>This game requires one phone or tablet which is to be shared between players, and pencil and many small papers for each player.</p>
+            <p>Begin by creating all the Players that are going to be playing. Press 'Start Game'. The player who is highlighted in grey is the first "dasher".</p>
+            <p>Hand the dasher the phone or tablet. That dasher will then click 'Show Word'. The dasher will read the word in Red aloud to all the other players, and spell the word out. Each player will write out on a piece of paper the word, and then they will create a definition for that word including the part of speach (eg noun), a definition, and an example sentence of that word in use. The dasher will do the same, but for the real definition.</p>
+            <p>Each player will hand their definition to the dasher. When all definitions are handed in, the dasher will shuffle them, along with the real one, and then read them each aloud once. When everyone has heard each definition once, the voting round begins.</p>
+            <p>In the voting round, the dasher again reads each definition, but this time each player must choose which one they believe is the real one. The dasher will assign points according to the following rules:</p>
+            <ul>
+                <li>a player gets 1 point for every person that voted for their definition</li>
+                <li>a player gets 2 points of the definition they voted for is the real definition</li>
+                <li>a player gets 3 points if their definition is sufficiently similar to the real definition (be charitable)</li>
+                <li>the dasher gets 3 points if nobody voted for the real definition</li>
+            </ul>
+            <p>At the end of the turn, the dasher presses 'Next Word' and passes the phone or tablet on to the next dasher (highlighted grey). A round consists of each person being the dasher once. The game ends after a set number of rounds, usually 1 or 2. The player with the most points is the winner.</p>
+
+        </div>
+        <div id="players">
+            <h2>Players <button id="add-player" class="btn btn-default">Add Player</button></h2>
+            <div id="player-list">
+                <div class="player">
+                    <div class="name">
+                        <input type="text" value="player1" class="name-input">
+                    </div>
+                    <div class="points">
+                        <input type="text" value="0" class="points-input">
+                    </div>
+                    <div>
+                        <button class="btn btn-warning plus-points" data-value="1">+1</button>
+                    </div>
+                    <div>
+                        <button class="btn btn-warning plus-points" data-value="2">+2</button>
+                    </div>
+                    <div>
+                        <button class="btn btn-warning plus-points" data-value="3">+3</button>
+                    </div>
+                    <div>
+                        <button type="button" class="close">×</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</div>
